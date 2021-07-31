@@ -49,7 +49,15 @@ res.redirect("/");
 })
 
 app.get("/posts/:postName", function(req,res){
- var RequestedTitle=req.params.postName;
+ const requestedTitle=req.params.postName;
+
+ posts.forEach(function(post){
+   const storedTitle=post.title;
+
+   if(storedTitle===requestedTitle){
+     console.log("Match found!");
+   }
+ })
 })
 
 
